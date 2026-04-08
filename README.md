@@ -1,2 +1,2 @@
-# PPT-CECA
-Rock, Paper, Scissors - Python Edition
+# Actividad Autónoma 2
+Juego Piedra, Papel o Tijera.
