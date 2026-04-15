@@ -1,8 +1,27 @@
-# APRENDIZAJE AUTÓNOMO 2
+# Proyecto Final
 # Juego Piedra, Papel o Tijera (Christian Esteban Calderón Acurio).
 
 # Primero importo una libreria de Python para generar azar.
 import random
+
+NORMA = {
+    "piedra" : "tijera",
+    "papel" : "piedra",
+    "tijera" : "papel"
+}
+
+def obtener_resultado(jugador, cpu):
+    
+    if jugador == cpu:
+        return "Empate"
+    
+    if NORMA[jugador] == cpu:
+        return "Ganaste"
+    
+    else:
+        return "Perdiste"
+
+    
 
 # Creo la lista de opociones válidas dentro del juego.
 opciones_ppt = ["piedra", "papel", "tijera"]
@@ -42,47 +61,48 @@ while ejecutando_juego:
 
             # Proceso de Asignación de Resultado.
             # Creo la variable resultado, que se va ha determinar cuando termine el proceso de Asignación.
-            resultado = ""
+            resultado = obtener_resultado(eleccion_jugador, eleccion_cpu)
+            print("Resultado: " + resultado)
 
-            # Caso 1: El jugador eligió piedra.
-            if eleccion_jugador == "piedra":
-                if eleccion_cpu == "piedra":
-                    resultado = "EMPATE"
-                elif eleccion_cpu == "papel":
-                    resultado = "PERDISTE"
-                # Se asume tijera porque ya se descartan las otras opciones en los pasos anteriores.
-                else:
-                    resultado = "GANASTE"
+            # # Caso 1: El jugador eligió piedra.
+            # if eleccion_jugador == "piedra":
+            #     if eleccion_cpu == "piedra":
+            #         resultado = "EMPATE"
+            #     elif eleccion_cpu == "papel":
+            #         resultado = "PERDISTE"
+            #     # Se asume tijera porque ya se descartan las otras opciones en los pasos anteriores.
+            #     else:
+            #         resultado = "GANASTE"
 
-            # Caso 2: El jugador eligió papel.
-            elif eleccion_jugador == "papel":
-                if eleccion_cpu == "piedra":
-                    resultado = "GANASTE"
-                elif eleccion_cpu == "papel":
-                    resultado = "EMPATE"
-                else:
-                    resultado = "PERDISTE"
+            # # Caso 2: El jugador eligió papel.
+            # elif eleccion_jugador == "papel":
+            #     if eleccion_cpu == "piedra":
+            #         resultado = "GANASTE"
+            #     elif eleccion_cpu == "papel":
+            #         resultado = "EMPATE"
+            #     else:
+            #         resultado = "PERDISTE"
 
-            # Caso 3: El jugador eligió tijera
-            # Aquí no se coloca nada en else porque ya no queda otra opción más que tijera.
-            else:
-                if eleccion_cpu == "piedra":
-                    resultado = "PERDISTE"
-                elif eleccion_cpu == "papel":
-                    resultado = "GANASTE"
-                else:
-                    resultado = "EMPATE"
+            # # Caso 3: El jugador eligió tijera
+            # # Aquí no se coloca nada en else porque ya no queda otra opción más que tijera.
+            # else:
+            #     if eleccion_cpu == "piedra":
+            #         resultado = "PERDISTE"
+            #     elif eleccion_cpu == "papel":
+            #         resultado = "GANASTE"
+            #     else:
+            #         resultado = "EMPATE"
 
-            # Con la variable determinada se muestra el resultado.
-            print(resultado)
+            # # Con la variable determinada se muestra el resultado.
+            # print(resultado)
 
             # Inmediatamente se pregunta se quiere jugar de nuevo.
             jugar_otra = input("\n¿Quieres volver a jugar? (si/no): ")
             if jugar_otra != "si":
                 # Si se escribe no se rompe el bucle y termina el juego porque declara false a la variable jugando y ejecutando_juego.    
                 jugando = False 
-                print("Gracias por jugar.")
                 ejecutando_juego = False
+                print("Gracias por jugar.")
 
     else:
         # Si no escribió ni jugar ni reglas le sale este mensaje.
