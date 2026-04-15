@@ -108,13 +108,3 @@ while ejecutando_juego:
         # Si no escribió ni jugar ni reglas le sale este mensaje.
         print("Opción incorrecta.")
     
-
-
-
-
-
-
-
-
-
-# prueba de cambio en github.
