@@ -4,20 +4,22 @@
 # Primero importo una libreria de Python para generar azar.
 import random
 
-NORMA = {
-    "piedra" : "tijera",
-    "papel" : "piedra",
-    "tijera" : "papel"
-}
+# Creamos un diccionario que nos servirá como una lista de relaciones.
+# En este caso colocamos las relaciones que derivan en victoria, mas adelante la función se encargará de asignar la derrota o empate.
+NORMA = {"piedra" : "tijera", "papel" : "piedra", "tijera" : "papel"}
 
+# Creamos la función del juego, basado en la dinámica de descarte.
 def obtener_resultado(jugador, cpu):
     
+    # En el caso que sean iguales.
     if jugador == cpu:
         return "Empate"
     
-    if NORMA[jugador] == cpu:
+    # En el caso donde la opción que envia el jugador se tranforma en la respuesta del diccionario y eso se compara con el cpu. (Clave:valor)
+    elif NORMA[jugador] == cpu:
         return "Ganaste"
     
+    # Por descarte, si no empata ni gana.
     else:
         return "Perdiste"
 
@@ -59,42 +61,9 @@ while ejecutando_juego:
             eleccion_cpu = random.choice(opciones_ppt)
             print("La computadora eligió: " + eleccion_cpu)
 
-            # Proceso de Asignación de Resultado.
-            # Creo la variable resultado, que se va ha determinar cuando termine el proceso de Asignación.
+            # Proceso de asignación de resultado a través de la función.
             resultado = obtener_resultado(eleccion_jugador, eleccion_cpu)
             print("Resultado: " + resultado)
-
-            # # Caso 1: El jugador eligió piedra.
-            # if eleccion_jugador == "piedra":
-            #     if eleccion_cpu == "piedra":
-            #         resultado = "EMPATE"
-            #     elif eleccion_cpu == "papel":
-            #         resultado = "PERDISTE"
-            #     # Se asume tijera porque ya se descartan las otras opciones en los pasos anteriores.
-            #     else:
-            #         resultado = "GANASTE"
-
-            # # Caso 2: El jugador eligió papel.
-            # elif eleccion_jugador == "papel":
-            #     if eleccion_cpu == "piedra":
-            #         resultado = "GANASTE"
-            #     elif eleccion_cpu == "papel":
-            #         resultado = "EMPATE"
-            #     else:
-            #         resultado = "PERDISTE"
-
-            # # Caso 3: El jugador eligió tijera
-            # # Aquí no se coloca nada en else porque ya no queda otra opción más que tijera.
-            # else:
-            #     if eleccion_cpu == "piedra":
-            #         resultado = "PERDISTE"
-            #     elif eleccion_cpu == "papel":
-            #         resultado = "GANASTE"
-            #     else:
-            #         resultado = "EMPATE"
-
-            # # Con la variable determinada se muestra el resultado.
-            # print(resultado)
 
             # Inmediatamente se pregunta se quiere jugar de nuevo.
             jugar_otra = input("\n¿Quieres volver a jugar? (si/no): ")
