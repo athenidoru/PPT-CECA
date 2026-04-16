@@ -38,19 +38,19 @@ Esta utiliza una dinámica de descarte:
 
 El programa utiliza bucles para gestionar la persistencia de la aplicación:
 
-  5.1. Bucle Principal: Mantiene el menú activo para navegar entre jugar o leer reglas.
+  4.1. Bucle Principal: Mantiene el menú activo para navegar entre jugar o leer reglas.
   
-  5.2. Bucle de Juego: Permite jugar múltiples rondas consecutivas sin reiniciar el programa.
+  4.2. Bucle de Juego: Permite jugar múltiples rondas consecutivas sin reiniciar el programa.
 
 5. Lógica de Decisiones y Validación (if, elif, else)
 
 Se utilizan condicionales para dirigir el flujo y asegurar la integridad de los datos:
 
-  6.1. Navegación: Distingue entre las opciones del menú.
+  5.1. Navegación: Distingue entre las opciones del menú.
   
-  6.2. Validación de entrada: Si el usuario ingresa un dato inválido, la instrucción continue reinicia el bucle de entrada.
+  5.2. Validación de entrada: Si el usuario ingresa un dato inválido, la instrucción continue reinicia el bucle de entrada.
   
-  6.3. Seguridad: El else final actúa como una red de seguridad para capturar entradas no reconocidas.
+  5.3. Seguridad: El else final actúa como una red de seguridad para capturar entradas no reconocidas.
 
 ![Flujograma Principal](img/FlujogramaPPT-01.jpg)
 ![Flujograma Principal](img/FlujogramaPPT-02.jpg)
