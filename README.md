@@ -1,7 +1,7 @@
 # Juego Piedra, Papel o Tijera.
 
 Información del Proyecto
-Desarrollador: Christian Esteban Calderón Acurio 
+/nDesarrollador: Christian Esteban Calderón Acurio 
 Fecha de creación: 15 de abril de 2026
 Lenguaje: Python 3.14.0
 
